@@ -1,0 +1,48 @@
+﻿@model LibrarySystem.Models.LendRecord
+
+@{ ViewBag.Title = "借閱紀錄"; }
+
+<h2>借閱紀錄</h2>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LendDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KeeperId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnglishName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChineseName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in (List<LibrarySystem.Models.LendRecord>)ViewBag.LendRecord)
+        {
+            <tr>
+                <td>
+                    @*@item.LendDate也可以這樣寫，像index一樣*@
+                    @Html.DisplayFor(modelItem => item.LendDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KeeperId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnglishName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChineseName)
+                </td>
+            </tr>
+         }
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

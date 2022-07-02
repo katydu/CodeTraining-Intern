@@ -1,0 +1,172 @@
+﻿@model LibrarySystem.Models.BookData
+
+@{
+    ViewBag.Title = "UpdateBook";
+
+    object TextBoxForAttr;
+    object DropDownListForAttr;
+    //如果read only or not為true代表是明細頁面
+    if ((bool)ViewData["ReadOnlyOrNot"])
+    {
+        TextBoxForAttr = new { @class = "form-control", @readonly = "readonly" };
+        DropDownListForAttr = new { @class = "form-control", @disabled = "disabled" };
+        <script type="text/javascript">
+            $(function () {
+                $("#Save").hide();
+                $("#Delete").hide();
+            });
+        </script>
+    }
+    else
+    {
+        //更新頁面
+        TextBoxForAttr = new { @class = "form-control" };
+        DropDownListForAttr = new { @class = "form-control" };
+        <script type="text/javascript">
+            $(function () {
+                $("#Save").show();
+                $("#Delete").show();
+                var BookStatus = $("#BookStatus");
+                var BooKeeper = $("#BooKeeper");
+                //B:已借出C:已借出(未領)U:不可借出A:可借出
+                if ((BookStatus.val() == "B") || (BookStatus.val() == "C")) {
+                    BooKeeper.removeAttr("disabled");
+                } else {
+                    //.attr('disabled', true);
+                    BooKeeper.attr("disabled", "disabled");
+                }
+
+                BookStatus.change(function () {
+                    if ((BookStatus.val() == "B") || (BookStatus.val() == "C")) {
+                        BooKeeper.removeAttr("disabled");
+                    } else {
+                        BooKeeper.attr("disabled", "disabled");
+                        BooKeeper.val("");
+                    }
+                });
+            });
+        </script>
+    }
+}
+
+<h2>書籍資料</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BookName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.BookName, TextBoxForAttr)
+                @Html.ValidationMessageFor(model => model.BookName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BookAuthor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.BookAuthor, TextBoxForAttr)
+                @Html.ValidationMessageFor(model => model.BookAuthor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Publisher, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Publisher, TextBoxForAttr)
+                @Html.ValidationMessageFor(model => model.Publisher, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BookNote, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.BookNote, TextBoxForAttr)
+                @Html.ValidationMessageFor(model => model.BookNote, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BoughtDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.BoughtDate, TextBoxForAttr)
+                @Html.ValidationMessageFor(model => model.BoughtDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ClassId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ClassId, (List<SelectListItem>)ViewBag.BookClasses, "請選擇", DropDownListForAttr)
+                @Html.ValidationMessageFor(model => model.ClassId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BookStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.BookStatus, (List<SelectListItem>)ViewBag.BookStatuses, "請選擇", DropDownListForAttr)
+                @Html.ValidationMessageFor(model => model.BookStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BooKeeper, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.BooKeeper, (List<SelectListItem>)ViewBag.Borrowers, "請選擇", DropDownListForAttr)
+                @Html.ValidationMessageFor(model => model.BooKeeper, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="存檔" class="btn btn-default" id="Save" />
+                <input type="button" value="刪除" class="btn btn-default" id="Delete"/>
+                <input class="HideBook" type="hidden" value='@Model.BookId' name="@Model.BookName" />
+            </div>
+        </div>
+    </div>
+}
+
+@ViewBag.BookId
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Delete").click(function (e) {
+
+            const BookName = $(this).next().attr("name");
+
+            e.preventDefault();
+
+            if (confirm("是否刪除這本書 (" + BookName + ") ?")) {
+                const BookId = $(this).next().val();
+                $.ajax({
+                    type: "POST",
+                    url: "/BookData/DeleteBook",
+                    data: "BookId=" + BookId,
+                    dataType: "json",
+                    success: function (response) {
+                        if (response) {
+                            alert("書籍 (" + BookName + ") 刪除成功");
+                            window.location.replace("/BookData/index");
+                        } else {
+                            alert("書籍 (" + BookName + ") 出借中, 無法刪除");
+                        }
+                    }, error: function (error) {
+                        alert("書籍 (" + BookName + ") 刪除失敗");
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>
