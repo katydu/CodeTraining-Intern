@@ -3,7 +3,13 @@
 @{
     ViewBag.Title = "AddBook";
 }
-
+<style>
+    .control-label:before {
+        content: "*";
+        color: red;
+        font-size: larger;
+    }
+</style>
 <h2>新增書籍</h2>
 
 @using (Html.BeginForm()) 

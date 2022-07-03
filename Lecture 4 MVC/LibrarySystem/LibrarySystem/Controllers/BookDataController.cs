@@ -62,6 +62,7 @@ namespace LibrarySystem.Controllers
         /// </summary>
         /// <param name="Data">新增之書籍資料</param>
         /// <returns></returns>
+        /// [缺]沒有考慮重複輸入相同書籍的判斷
         [HttpPost()]
         public ActionResult AddBook(Models.BookData Data)
         {
@@ -121,8 +122,7 @@ namespace LibrarySystem.Controllers
             ViewData["ReadOnlyOrNot"] = false;
 
             Models.BookData PreviousBookData = this.BookService.GetUpdateBookData(UpdateBookData.BookId);
-
-            if (ModelState.IsValid)
+            if (ModelState.IsValid||(UpdateBookData.BookStatus == "A") || (UpdateBookData.BookStatus == "U"))
             {
                 //不懂
                 if (PreviousBookData.BooKeeper != (UpdateBookData.BooKeeper == null ? string.Empty : UpdateBookData.BooKeeper))
