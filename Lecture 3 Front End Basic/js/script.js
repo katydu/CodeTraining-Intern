@@ -148,7 +148,8 @@ function loadBookData(){
     bookDataFromLocalStorage = JSON.parse(localStorage.getItem("bookData"));
     if(bookDataFromLocalStorage == null){
         bookDataFromLocalStorage = bookData;
-        localStorage.setItem("bookData",JSON.stringify(bookDataFromLocalStorage));
+        //序列化
+        localStorage.setItem("bookData",JSON.stringify(bookDataFromLocalStorage));//localStorage更新
     }
 }
 
@@ -157,6 +158,7 @@ function deleteBook(e){
     e.preventDefault();
     //e.target是使用者按的那顆刪除按鈕
     //closest是去抓取離按鈕最近的tr
+    //tr是列td是欄
     var tr = $(e.target).closest("tr"),
         grid = $("#book_grid").data("kendoGrid"),//將book_grid的資料存進grid
         dataItem = grid.dataItem(tr);//依照tr去抓取grid裡的那一列資料
