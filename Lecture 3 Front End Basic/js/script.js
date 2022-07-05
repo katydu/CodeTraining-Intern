@@ -68,7 +68,7 @@ $(function(){
             },
             pageSize: 20,
         },
-        toolbar: kendo.template("<div class='book-grid-toolbar'><input class='book-grid-search' placeholder='我想要找......' type='text'></input></div><select id='searchType'></select>"),
+        toolbar: kendo.template("<div class='book-grid-toolbar'><input class='book-grid-search' placeholder='我想要找......' type='text'></input></div><select id='searchType'></select><button class='k-button k-primary'>搜尋</button>"),
         height: 550,
         sortable: true,
         pageable: {
@@ -100,9 +100,10 @@ $(function(){
         change: changeSearchTypeWithContent
     });
 
-    $(".book-grid-search").keyup(function () {
+    //從keyup()改成用input就可以不用離開searchbox就可以做到像autocomplete的效果
+    $(".book-grid-search").on("input",function(){
         changeSearchTypeWithContent();
-    });
+    })
 
     //kendo window
     var myWindow = $("#fieldlist");
@@ -124,8 +125,8 @@ $(function(){
         modal: true,//背景不能點
         actions: [//window右上角的縮小放大關閉功能
             "Pin",
-            "Minimize",
-            "Maximize",
+            //"Minimize",
+            //"Maximize",
             "Close"
         ],
         close:refreshColumn
@@ -172,6 +173,7 @@ function deleteBook(e){
 
 //變換圖片
 function changeBookImg() {
+    //先抓到下拉式選單
     var dropdownlist = $("#book_category").data("kendoDropDownList");
     var num = dropdownlist.value();//data裡的value
     $(".book-image").attr("src", num);
