@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LibrarySystem.Controllers
@@ -17,9 +14,9 @@ namespace LibrarySystem.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            //書籍類別
+            //圖書類別
             ViewBag.BookClasses = this.CodeService.GetClassTable();
-            //會員
+            //借閱人
             ViewBag.Borrowers = this.CodeService.GetUserTable("O");
             //借閱狀態
             ViewBag.BookStatuses = this.CodeService.GetCodeTable();

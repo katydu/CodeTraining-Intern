@@ -57,10 +57,12 @@ namespace LibrarySystem.Models
                             	AND Code.CODE_TYPE = 'BOOK_STATUS'
                             WHERE
                             	(Data.BOOK_CLASS_ID = @BookClass OR @BookClass = '') AND
-                            	(Data.BOOK_NAME LIKE '%' + @BookName + '%' OR @BookName = '') AND
+                            	(Data.BOOK_NAME LIKE '%' + @BookName + '%') AND
                             	(Data.BOOK_STATUS = @BookStatus OR @BookStatus = '') AND
-                            	(Data.BOOK_KEEPER = @BooKeeper OR @BooKeeper = '')
+                            	(Data.BOOK_KEEPER = @BooKeeper OR @BooKeeper = '') AND
+                                (DATA.BOOK_NAME <> '') 
                             ORDER BY '圖書類別', '購書日期' DESC, '借閱狀態', '書名'";
+            //DATA.BOOK_NAME <> ''因data class裡面的DataBase有書名為""的例子，若書名為""傳進來會出錯
             //using拿掉也可以正常跑
             using (SqlConnection conn = new SqlConnection(this.GetDBConnectionString()))
             {
