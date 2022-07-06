@@ -42,6 +42,7 @@ namespace LibrarySystem.Models
         /// 書籍內容簡介
         /// </summary>
         [DisplayName("內容簡介")]
+
         [Required(ErrorMessage = "此欄位必填")]
         public string BookNote { get; set; }
 

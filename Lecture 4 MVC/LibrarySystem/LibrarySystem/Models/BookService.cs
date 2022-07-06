@@ -101,10 +101,6 @@ namespace LibrarySystem.Models
                     BookStatus = row["借閱狀態"].ToString(),
                     BooKeeper = row["借閱人"].ToString(),
                     BookAuthor = row["作者"].ToString(),
-                    //CreateDate = row["紀錄建立日期"].ToString(),
-                    //CreateUser = row["紀錄建立人"].ToString(),
-                    //ModifyDate = row["紀錄修改日期"].ToString(),
-                    //ModifyUser = row["紀錄修改人"].ToString()
                 });
             }
             return SearchResult;
