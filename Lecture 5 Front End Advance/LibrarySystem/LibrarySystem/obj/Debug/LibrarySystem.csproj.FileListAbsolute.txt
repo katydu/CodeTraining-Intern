@@ -1,0 +1,189 @@
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\LibrarySystem.dll.config
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\LibrarySystem.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\LibrarySystem.pdb
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\csc.exe
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\csc.exe.config
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\csc.rsp
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\csi.exe
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\csi.rsp
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\System.AppContext.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\vbc.exe
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\vbc.exe.config
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\vbc.rsp
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\VBCSCompiler.exe
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\Antlr3.Runtime.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\Newtonsoft.Json.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.Helpers.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.Mvc.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.Optimization.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.Razor.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Deployment.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Razor.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\WebGrease.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.Helpers.xml
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.Mvc.xml
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.Optimization.xml
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.Razor.xml
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.xml
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Deployment.xml
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Razor.xml
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\Newtonsoft.Json.xml
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\Antlr3.Runtime.pdb
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.csproj.CopyComplete
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.dll
+C:\Users\USER\Desktop\MVC_Sample\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.pdb
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\LibrarySystem.dll.config
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\LibrarySystem.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\LibrarySystem.pdb
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\csc.exe
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\csc.exe.config
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\csc.rsp
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\csi.exe
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\csi.rsp
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\System.AppContext.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\vbc.exe
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\vbc.exe.config
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\vbc.rsp
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\VBCSCompiler.exe
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\Antlr3.Runtime.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\Newtonsoft.Json.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.Helpers.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.Mvc.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.Optimization.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.Razor.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Deployment.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Razor.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\WebGrease.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.Helpers.xml
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.Mvc.xml
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.Optimization.xml
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.Razor.xml
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.xml
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Deployment.xml
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Razor.xml
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\Newtonsoft.Json.xml
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\Antlr3.Runtime.pdb
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.csproj.CopyComplete
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.dll
+C:\Users\USER\Desktop\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.pdb
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\LibrarySystem.dll.config
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\LibrarySystem.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\LibrarySystem.pdb
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\csc.exe
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\csc.exe.config
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\csc.rsp
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\csi.exe
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\csi.rsp
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\System.AppContext.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\vbc.exe
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\vbc.exe.config
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\vbc.rsp
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\VBCSCompiler.exe
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\Antlr3.Runtime.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\Newtonsoft.Json.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.Helpers.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.Mvc.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.Optimization.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.Razor.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Deployment.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Razor.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\WebGrease.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.Helpers.xml
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.Mvc.xml
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.Optimization.xml
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.Razor.xml
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.xml
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Deployment.xml
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\System.Web.WebPages.Razor.xml
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\Newtonsoft.Json.xml
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\Antlr3.Runtime.pdb
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.csproj.AssemblyReference.cache
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.csproj.CoreCompileInputs.cache
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.csproj.CopyComplete
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.dll
+C:\Users\katy_du\Desktop\CodeTraining-GSS\Lecture 4 MVC\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.pdb
