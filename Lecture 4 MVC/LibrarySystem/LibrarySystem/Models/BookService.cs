@@ -217,8 +217,7 @@ namespace LibrarySystem.Models
             }
             //dt是陣列，我們只要第一筆
             DataRow row = dt.Rows[0];
-
-            Models.BookData ThisBookData = new BookData()
+            Models.BookData thisbookdata = new BookData()
             {
                 BookId = Convert.ToInt32(row["書籍編號"].ToString()),
                 BookName = row["書名"].ToString(),
@@ -230,8 +229,7 @@ namespace LibrarySystem.Models
                 BookStatus = row["書本狀態"].ToString(),
                 BooKeeper = row["借閱人"].ToString(),
             };
-
-            return ThisBookData;
+            return thisbookdata;
         }
         /// <summary>
         /// 新增借閱紀錄
