@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 圖書資訊系統</title>
+    <title>柴柴 - 圖書資訊系統</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
@@ -29,11 +29,6 @@
                 </button>
                 <!--功能模組可以用Area把它們分離開來-->
                 @Html.ActionLink("圖書資訊系統", "Index", "BookData", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("新增", "AddBook", "BookData")</li>
-                </ul>
             </div>
         </div>
     </div>

@@ -241,6 +241,7 @@ ORDER BY �ѥ�ID DESC;
 --�ĤE�D �s�W�@���ɾ\�����A�ɮѤH�����|�A�ѥ�ID��2294�A�ɾ\�����2021/01/01�A�ç�s���y�D�ɪ����A���w�ɥX�B�ɾ\�H�����|
 --CRE_DATE:�إ߮ɶ� CRE_USR:�إߨϥΪ�
 DECLARE @USERID VARCHAR(4) ;
+--建議不要用名子因為怕有人名子相同
 SET @USERID = (SELECT mm.[USER_ID] FROM MEMBER_M mm WHERE mm.USER_CNAME = '���|');
 --@USERID = '0002'
 --PRINT @USERID;

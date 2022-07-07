@@ -1,91 +1,50 @@
-﻿<!--使用BookSearch Model內的資料-->
-@model LibrarySystem.Models.BookSearch
-
-@{
-    ViewBag.Title = "Index";
-}
+﻿
 
 <h2>首頁</h2>
-<!--預設使用Post傳遞變數-->
-@using (Html.BeginForm())
-{
-    <!--要搭配Action設定，這樣在登入畫面時會產生一個隱藏的input值，預防跨網站攻擊-->
-    @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>書籍搜尋</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })<!--我覺得不需要這行，因為查詢不需要驗證-->
-        <div class="form-group"><!--htmlAttributes可加可不加-->
-            @Html.LabelFor(model => model.BookName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.BookName, new { @class = "form-control" } )
-            </div>
-        </div>
+<div id="SearchForm" class="form-horizontal">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BookClass, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.BookClass, (List<SelectListItem>)ViewBag.BookClasses, "請選擇", new { @class = "form-control" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BooKeeper, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.BooKeeper, (List<SelectListItem>)ViewBag.Borrowers, "請選擇", new { @class = "form-control" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BookStatus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.BookStatus, (List<SelectListItem>)ViewBag.BookStatuses, "請選擇", new { @class = "form-control" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="查詢" class="btn btn-default" />
-                <input type="reset" value="清除" class="btn btn-default" />
-            </div>
+    <h4>書籍搜尋</h4>
+    <div class="form-group">
+        <label class="control-label col-md-2">書名</label>
+        <div class="col-md-10">
+            <input type="text" id="BookName" />
         </div>
     </div>
 
-    if (ViewBag.SearchResult != null)
-    {
-        <table class="table table-bordered table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>圖書類別</th>
-                    <th>書名</th>
-                    <th>購書日期</th>
-                    <th>借閱狀態</th>
-                    <th>借閱人</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in (List<LibrarySystem.Models.BookData>)ViewBag.SearchResult)
-                {
-                <tr id='@item.ClassId'>
-                    <td>@item.ClassId</td>
-                    <td>@Html.ActionLink(@item.BookName, "UpdateBook", new { BookId = @item.BookId, ViewType = "Detail" })</td>
-                    <td>@item.BoughtDate</td>
-                    <td>@item.BookStatus</td>
-                    <td>@item.BooKeeper</td>
-                    <td>@Html.ActionLink("借閱紀錄", "LendRecord", new { BookId = @item.BookId })</td>
-                    <td>@Html.ActionLink("編輯", "UpdateBook", new { BookId = @item.BookId, ViewType = "Update" })</td>
-                    <td>
-                        <a class="BtnDelete" href="#">刪除</a>
-                        <!--沒有下面這行的話再刪除時會抓不到那本書的id(undefine)而導致error-->
-                        <input class="HideBook" type="hidden" value='@item.BookId' name="@item.BookName" />
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table>
-    }
-}
+    <div class="form-group">
+        <label class="control-label col-md-2">圖書類別</label>
+        <div class="col-md-10">
+            <select id="BookClass"></select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">借閱人</label>
+        <div class="col-md-10">
+            <select id="BookKeeper" ></select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">借閱狀態</label>
+        <div class="col-md-10">
+            <select id="BookStatus"></select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button id="Search" class="btn btn-default">查詢</button>
+            <button id="Reset" class="btn btn-default">清除</button>
+            <button id="Add" class="btn btn-default">新增</button>
+        </div>
+    </div>
+
+</div>
+
+
+
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -117,4 +76,5 @@
             }
             return false;
         });
-    });</script>
+    });
+</script>

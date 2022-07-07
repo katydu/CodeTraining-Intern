@@ -5,6 +5,9 @@ namespace LibrarySystem.Controllers
 {
     public class BookDataController : Controller
     {
+        /// <summary>
+        /// 基礎畫面顯示以及書籍相關之服務
+        /// </summary>
         readonly Models.CodeService CodeService = new Models.CodeService();
         readonly Models.BookService BookService = new Models.BookService();
 
@@ -14,14 +17,7 @@ namespace LibrarySystem.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            //圖書類別
-            ViewBag.BookClasses = this.CodeService.GetClassTable();
-            //借閱人
-            ViewBag.Borrowers = this.CodeService.GetUserTable("O");
-            //借閱狀態
-            ViewBag.BookStatuses = this.CodeService.GetCodeTable();
-            //return "Index"或不放也都會正常顯示
-            return View(new Models.BookSearch());
+            return View();
         }
 
         /// <summary>
