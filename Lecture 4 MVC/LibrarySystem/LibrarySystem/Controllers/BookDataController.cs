@@ -117,9 +117,17 @@ namespace LibrarySystem.Controllers
             ViewBag.Borrowers = this.CodeService.GetUserTable("W");
             ViewBag.BookStatuses = this.CodeService.GetCodeTable();
             ViewData["ReadOnlyOrNot"] = false;
-
             Models.BookData PreviousBookData = this.BookService.GetUpdateBookData(UpdateBookData.BookId);
-            if (ModelState.IsValid||(UpdateBookData.BookStatus == "A") || (UpdateBookData.BookStatus == "U"))
+            DateTime today = DateTime.Now;
+            DateTime boughtDay = DateTime.Parse(UpdateBookData.BoughtDate);
+            int n = today.CompareTo(boughtDay);
+            //比對更新時的購買日期是否正確
+            if (n < 0)
+            {
+                TempData["message"] = "購書日期在未來喔";
+                return View(UpdateBookData);
+            }
+            else if (ModelState.IsValid||(UpdateBookData.BookStatus == "A") || (UpdateBookData.BookStatus == "U"))
             {
                 //不懂
                 if (PreviousBookData.BooKeeper != (UpdateBookData.BooKeeper == null ? string.Empty : UpdateBookData.BooKeeper))
