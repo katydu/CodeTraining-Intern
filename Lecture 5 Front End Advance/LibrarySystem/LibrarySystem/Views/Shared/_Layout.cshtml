@@ -7,16 +7,17 @@
     <title>柴柴 - 圖書資訊系統</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <!--新增更新時的alert通知-->
-    @if (TempData["message"] != null)
-    {
-        <script type="text/javascript">
-            //因TempData["message"]是object(string)要轉成string型態才能被alert吃到
-            var message = @Html.Raw(Json.Encode(TempData["message"]));
-            alert(message);
-        </script>
-    }
+    <!--加上以下的引用-->
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/kendo.all.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/uikit.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/ViewControl.js"></script>
+
+    <link rel="stylesheet" href="~/Content/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="~/Content/kendo.material-main.min.css" />
+    <link rel="stylesheet" href="~/Content/uikit.min.css" />
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -28,7 +29,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!--功能模組可以用Area把它們分離開來-->
-                @Html.ActionLink("圖書資訊系統", "Index", "BookData", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("圖書資訊系統", "AddBook", "BookData", new { area = "" }, new { @class = "navbar-brand" })
             </div>
         </div>
     </div>
@@ -41,7 +42,6 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

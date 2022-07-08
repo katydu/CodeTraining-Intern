@@ -1,80 +1,126 @@
-﻿
+﻿<style>
+    li {
+        list-style:none;
+    }
+    #BookDataWindow label:before {
+        content: "*";
+        color: red;
+        font-size: larger;
+    }
+    #BookDataWindow span {
+        width:90% !important;
+    }
+    #WindowBoughtDate {
+        width: 90% !important;
+    }
+    #BookDataWindow button {
+        float: right;
+        margin-top: 20px;
+        margin-right: 10px;
+    }
 
+</style>
 <h2>首頁</h2>
 
-<div id="SearchForm" class="form-horizontal">
+<div id="BlackOut"></div>
 
-    <h4>書籍搜尋</h4>
+
+<ul id="BookDataWindow">
+    <div id="Validator">
+        <li>
+            <label>書名</label>
+            <br />
+            <input type="text" id="WindowBookName" name="BookName" class="WindowTextBox" required />
+        </li>
+        <li>
+            <input type="text" id="WindowBookId" style="display:none"/>
+        </li>
+        <li>
+            <label>作者</label>
+            <br />
+            <input type="text" id="WindowBookAuthor" name="BookAuthor" class="WindowTextBox" required />
+        </li>
+        <li>
+            <label>出版商</label>
+            <br />
+            <input type="text" id="WindowBookPublisher" name="Publisher" class="WindowTextBox" required />
+        </li>
+        <li>
+            <label>內容簡介</label>
+            <br />
+            <textarea id="WindowBookNote" name="BookNote" required></textarea>
+        </li>
+        <li>
+            <label>購書日期</label>
+            <br />
+            <input type="text" id="WindowBoughtDate" name="BoughtDatePicker" />
+        </li>
+        <li>
+            <label>圖書類別</label>
+            <br />
+            <select id="WindowBookClass" class="BookClass WindowDropDownList" name="BookClass" required></select>
+        </li>
+        <li id="BookStatusListItem">
+            <label>借閱狀態</label>
+            <br />
+            <select id="WindowBookStatus" class="BookStatus WindowDropDownList"></select>
+        </li>
+        <li id="BooKeeperListItem">
+            <label>借閱人</label>
+            <br />
+            <select id="WindowBooKeeper" class="BooKeeper WindowDropDownList"></select>
+        </li>
+        <li>
+            <button id="BtnAddBook" class="btn btn-default ButtonGroup">新增</button>
+            @*<button id="BtnUpdateBook" class="btn btn-default ButtonGroup UpdateButtonGroup">存檔</button>
+            <button id="BtnDeleteBook" class="btn btn-default ButtonGroup UpdateButtonGroup">刪除</button>*@
+        </li>
+    </div>
+</ul>
+
+<div class="form-horizontal" id="SearchForm">
+    <hr />
+
     <div class="form-group">
         <label class="control-label col-md-2">書名</label>
         <div class="col-md-10">
-            <input type="text" id="BookName" />
+            <input class="form-control" id="BookName" />
         </div>
     </div>
 
     <div class="form-group">
-        <label class="control-label col-md-2">圖書類別</label>
+        <label class="control-label col-md-2">書籍種類</label>
         <div class="col-md-10">
-            <select id="BookClass"></select>
+            <select id="BookClass" class="BookClass form-control"></select>
         </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-md-2">借閱人</label>
         <div class="col-md-10">
-            <select id="BookKeeper" ></select>
+            <select id="BooKeeper" class="BooKeeper form-control"></select>
         </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-md-2">借閱狀態</label>
         <div class="col-md-10">
-            <select id="BookStatus"></select>
+            <select id="BookStatus" class="BookStatus form-control"></select>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <button id="Search" class="btn btn-default">查詢</button>
-            <button id="Reset" class="btn btn-default">清除</button>
-            <button id="Add" class="btn btn-default">新增</button>
+            <button class="btn btn-default" id="BtnSearch">查詢</button>
+            <button class="btn btn-default" id="BtnClear">清除</button>
+            <button class="btn btn-default" id="BtnShowAddWindow">新增</button>
         </div>
     </div>
-
 </div>
 
+<div id="SerachGrid"></div>
 
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".BtnDelete").click(function (e) {
-
-            const BookName = $(this).next().attr("name");
-
-            e.preventDefault();
-
-            if (confirm("是否刪除這本書 (" + BookName + ") ?")) {
-                var Tr = $(this).closest('tr');
-                const BookId = $(this).next().val();
-                $.ajax({
-                    type: "POST",
-                    url: "/BookData/DeleteBook",
-                    data: "BookId=" + BookId,
-                    dataType: "json",
-                    success: function (response) {
-                        if (response) {
-                            $(Tr).remove();
-                            alert("書籍 (" + BookName + ") 刪除成功");
-                        } else {
-                            alert("書籍 (" + BookName + ") 出借中, 無法刪除");
-                        }
-                    }, error: function (error) {
-                        alert("書籍 (" + BookName + ") 刪除失敗");
-                    }
-                });
-            }
-            return false;
-        });
-    });
-</script>
+<div id="LendRecordWindow">
+    <h2>書本借閱紀錄</h2>
+    <div id="LendRecordGrid"></div>
+</div>

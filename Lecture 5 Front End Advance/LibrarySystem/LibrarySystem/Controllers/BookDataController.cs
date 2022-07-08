@@ -28,10 +28,6 @@ namespace LibrarySystem.Controllers
         [HttpPost]
         public ActionResult Index(Models.BookSearch condition)
         {
-            ViewBag.BookClasses = this.CodeService.GetClassTable();
-            ViewBag.Borrowers = this.CodeService.GetUserTable("O");
-            ViewBag.BookStatuses = this.CodeService.GetCodeTable();
-            ViewBag.SearchResult = this.BookService.GetSearchBookData(condition);
             //ModelState的值有最高的顯示優先權，而透過ModelState.Clear()將值清空之後，改以第二順位的Action指定的Model值來做顯示
             ModelState.Clear();
 

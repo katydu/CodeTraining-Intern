@@ -101,6 +101,10 @@ namespace LibrarySystem.Models
                     BookStatus = row["借閱狀態"].ToString(),
                     BooKeeper = row["借閱人"].ToString(),
                     BookAuthor = row["作者"].ToString(),
+                    //CreateDate = row["紀錄建立日期"].ToString(),
+                    //CreateUser = row["紀錄建立人"].ToString(),
+                    //ModifyDate = row["紀錄修改日期"].ToString(),
+                    //ModifyUser = row["紀錄修改人"].ToString(),
                 });
             }
             return SearchResult;
@@ -186,7 +190,7 @@ namespace LibrarySystem.Models
         /// <summary>
         /// 使用BookId取得(要更新的)書籍更新前資料並顯示出來
         /// </summary>
-        /// <param name="BookId"></param>
+        /// <param name="BookId">要取得更新前資料的BookId</param>
         /// <returns></returns>
         public Models.BookData GetUpdateBookData(int BookId)
         {
@@ -217,7 +221,7 @@ namespace LibrarySystem.Models
             }
             //dt是陣列，我們只要第一筆
             DataRow row = dt.Rows[0];
-            Models.BookData thisbookdata = new BookData()
+            Models.BookData ThisBookData = new BookData()
             {
                 BookId = Convert.ToInt32(row["書籍編號"].ToString()),
                 BookName = row["書名"].ToString(),
@@ -229,7 +233,7 @@ namespace LibrarySystem.Models
                 BookStatus = row["書本狀態"].ToString(),
                 BooKeeper = row["借閱人"].ToString(),
             };
-            return thisbookdata;
+            return ThisBookData;
         }
         /// <summary>
         /// 新增借閱紀錄
@@ -346,7 +350,7 @@ namespace LibrarySystem.Models
         /// <summary>
         /// 使用BookId決定刪除哪一本書
         /// </summary>
-        /// <param name="BookId"></param>
+        /// <param name="BookId">要刪除的書本編號</param>
         public void DeleteBookData(string BookId)
         {
             string sql = @"DELETE
@@ -379,8 +383,8 @@ namespace LibrarySystem.Models
         /// <summary>
         /// 使用BookId取得該本書的借閱紀錄
         /// </summary>
-        /// <param name="BookId"></param>
-        /// <returns></returns>
+        /// <param name="BookId">要取得借閱紀錄的書本Id</param>
+        /// <returns>包含查詢結果的List</returns>
         public List<Models.LendRecord> GetLendRecord(int BookId)
         {
             DataTable dt = new DataTable();
@@ -413,8 +417,8 @@ namespace LibrarySystem.Models
         /// <summary>
         /// 將借閱紀錄從DataTable加到List中
         /// </summary>
-        /// <param name="BookRecord"></param>
-        /// <returns></returns>
+        /// <param name="BookRecord">包含查詢結果的DataTable</param>
+        /// <returns>包含查詢結果的List</returns>
         private List<Models.LendRecord> MapLendRecordToList(DataTable BookRecord)
         {
             List<Models.LendRecord> SearchResult = new List<LendRecord>();

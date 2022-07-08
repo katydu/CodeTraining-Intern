@@ -107,6 +107,7 @@ $(function(){
 
     //kendo window
     var myWindow = $("#fieldlist");
+    debugger;
 
     $("#open_window").click(function() {
         myWindow.data("kendoWindow").open();
