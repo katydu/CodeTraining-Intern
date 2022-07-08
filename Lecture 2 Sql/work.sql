@@ -1,16 +1,16 @@
 USE GSSWEB
 GO
---ï¿½Ä¤@ï¿½D ï¿½Cï¿½Xï¿½Cï¿½Ó¨Ï¥ÎªÌ¨Cï¿½~ï¿½É®Ñ¼Æ¶qï¿½Aï¿½Ã¨Ì¨Ï¥ÎªÌ½sï¿½ï¿½ï¿½Mï¿½~ï¿½×°ï¿½ï¿½Æ§ï¿½
---ï¿½Û¤v
+--²Ä¤@ÃD ¦C¥X¨C­Ó¨Ï¥ÎªÌ¨C¦~­É®Ñ¼Æ¶q¡A¨Ã¨Ì¨Ï¥ÎªÌ½s¸¹©M¦~«×°µ±Æ§Ç
+--¦Û¤v
 SELECT KEEPER_ID AS KeeperId, USER_CNAME AS CName, USER_ENAME AS EName, year(LEND_DATE) AS BorrowYear, COUNT(YEAR(LEND_DATE))AS BorrowCnt
 FROM
---ï¿½@ï¿½wï¿½nï¿½ï¿½LEFT JOIN
+--¤@©w­n¥ÎLEFT JOIN
 MEMBER_M INNER JOIN BOOK_LEND_RECORD
 ON
 MEMBER_M.USER_ID = BOOK_LEND_RECORD.KEEPER_ID
 GROUP BY KEEPER_ID,USER_CNAME,USER_ENAME,YEAR(LEND_DATE)
 ORDER BY KeeperId, BorrowYear
---ï¿½ï¿½ï¿½ï¿½
+--¥¿¸Ñ
 SELECT 
 	KeeperId = MEMBER.USER_ID, 
 	CName = member.USER_CNAME, 
@@ -22,21 +22,21 @@ LEFT JOIN dbo.BOOK_LEND_RECORD AS record
 	ON KEEPER_ID = USER_ID
 GROUP BY MEMBER.USER_ID, member.USER_CNAME, member.USER_ENAME, YEAR(LEND_DATE)
 ORDER BY KeeperId, BorrowYear
---ï¿½tï¿½ï¿½
---ï¿½Î¤FLEFT JOINï¿½Ó¤ï¿½ï¿½OINNER JOINï¿½Aï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½Hï¿½iï¿½ï¿½Sï¿½É¹Lï¿½Ñ¡Aï¿½ï¿½INNER JOINï¿½|ï¿½ä¤£ï¿½ì¨ºï¿½ï¿½Sï¿½É®Ñªï¿½ï¿½H
---ï¿½Ë¬dï¿½Lï¿½FLEND_DATEï¿½Sï¿½ï¿½NULLï¿½È¡Aï¿½ï¿½ï¿½Oï¿½oï¿½nISNULL(YEAR(record.LEND_DATE), '0000')ï¿½oï¿½ï¿½Oï¿½]ï¿½ï¿½ï¿½×§Kï¿½Sï¿½É¹Lï¿½Ñ¦]ï¿½ï¿½ï¿½bBOOK_LEND_RECORDï¿½ï¿½ï¿½ï¿½Sï¿½ï¿½Æªï¿½ï¿½ï¿½ï¿½p
+--®t²§
+--¥Î¤FLEFT JOIN¦Ó¤£¬OINNER JOIN¡A¦]¬°¦³¤H¥i¯à¨S­É¹L®Ñ¡A¥ÎINNER JOIN·|§ä¤£¨ì¨º¦ì¨S­É®Ñªº¤H
+--ÀË¬d¹L¤FLEND_DATE¨S¦³NULL­È¡A¦ý¬O«o­nISNULL(YEAR(record.LEND_DATE), '0000')³o¦æ¬O¦]¬°Á×§K¨S­É¹L®Ñ¦]¦¹¦bBOOK_LEND_RECORDªí®æ¨S¸ê®Æªºª¬ªp
 
---ï¿½Ä¤Gï¿½D ï¿½Cï¿½Xï¿½Ì¨ï¿½ï¿½wï¿½ïªºï¿½Ñ«eï¿½ï¿½ï¿½W(ï¿½É¾\ï¿½Æ¶qï¿½Ì¦hï¿½eï¿½ï¿½ï¿½W)
---ï¿½Û¤v
-SELECT TOP(5) --ï¿½Wï¿½[with ties
+--²Ä¤GÃD ¦C¥X³Ì¨üÅwªïªº®Ñ«e¤­¦W(­É¾\¼Æ¶q³Ì¦h«e¤­¦W)
+--¦Û¤v
+SELECT TOP(5) --¼W¥[with ties
 	data.BOOK_ID AS BookId, BOOK_NAME AS BookName, COUNT(BOOK_NAME) AS QTY
 FROM BOOK_LEND_RECORD AS record 
 INNER JOIN BOOK_DATA AS data
 	ON record.BOOK_ID = data.BOOK_ID
 GROUP BY data.BOOK_ID, BOOK_NAME
 ORDER BY QTY DESC
---ï¿½ï¿½ï¿½ï¿½
-SELECT TOP (5) WITH TIES --ï¿½Wï¿½[with tiesï¿½Aï¿½ï¿½ï¿½ï¿½Pï¿½Wï¿½ï¿½ï¿½Qï¿½ï¿½|
+--¥¿¸Ñ
+SELECT TOP (5) WITH TIES --¼W¥[with ties¡A¨¾¤î¦P¦W¦¸³Q¿òº|
 	BookId = record.BOOK_ID, 
 	BookName = data.BOOK_NAME, 
 	QTY = COUNT(*) 
@@ -46,13 +46,14 @@ INNER JOIN dbo.BOOK_LEND_RECORD AS record
 GROUP BY record.BOOK_ID, data.BOOK_NAME
 ORDER BY QTY DESC
 
---ï¿½Ä¤Tï¿½D ï¿½Hï¿½@ï¿½uï¿½Cï¿½X2019ï¿½~ï¿½Cï¿½@ï¿½uï¿½ï¿½ï¿½yï¿½É¾\ï¿½Ñ¶q (ï¿½Ð¦Ò¼{ï¿½ï¿½ï¿½Ó»Ý¨Dï¿½Õ¾ï¿½ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½Ü°Ê´Tï¿½ï¿½)
---ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½oï¿½{SPAN_TABLE)
---ï¿½]ï¿½iï¿½Hï¿½gï¿½@ï¿½ï¿½function
-DECLARE @theYear INT = 2019 --ï¿½Ï¥ï¿½ï¿½Ü¼Æ¤ï¿½Kï¿½ï¿½ï¿½Ó½Õ¾ï¿½
+--²Ä¤TÃD ¥H¤@©u¦C¥X2019¦~¨C¤@©u®ÑÄy­É¾\®Ñ¶q (½Ð¦Ò¼{¥¼¨Ó»Ý¨D½Õ¾ã¹ïµ{¦¡ªºÅÜ°Ê´T«×)
+--¥¿¸Ñ(¦³µo²{SPAN_TABLE)
+--¤]¥i¥H¼g¤@­Ófunction
+DECLARE @theYear INT = 2019 --¨Ï¥ÎÅÜ¼Æ¤è«K¥¼¨Ó½Õ¾ã
+
 SELECT 
 	Quarter = span.SPAN_YEAR + '/' + span.SPAN_START + '~' + span.SPAN_YEAR + '/' + span.SPAN_END,
-	Cnt = COUNT(*)--ï¿½iï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½record.BOOK_ID
+	Cnt = COUNT(*)--¥i¥H´À´«¦¨record.BOOK_ID
 FROM BOOK_LEND_RECORD AS record
 INNER JOIN SPAN_TABLE AS span
 	ON 
@@ -61,32 +62,30 @@ INNER JOIN SPAN_TABLE AS span
 		MONTH(record.LEND_DATE) BETWEEN span.SPAN_START AND span.SPAN_END
 WHERE YEAR(record.LEND_DATE) = @theYear
 GROUP BY span.SPAN_YEAR, span.SPAN_START, span.SPAN_END
---ï¿½`ï¿½Njoinï¿½ï¿½ï¿½ó¤£¯ï¿½gï¿½Uï¿½ï¿½ï¿½oï¿½Ó¡Aï¿½]ï¿½ï¿½IDENTITY_FILEDï¿½Oï¿½yï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Sï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Nï¿½q
+--ª`·Njoin±ø¥ó¤£¯à¼g¤U­±³o­Ó¡A¦]¬°IDENTITY_FILED¬O¬y¤ô¸¹¡A¨S¦³³sµ²·N¸q
 SELECT * FROM BOOK_LEND_RECORD AS record
 INNER JOIN SPAN_TABLE AS span
 ON record.IDENTITY_FILED = span.IDENTITY_FILED
 
-
---ï¿½Ä¥|ï¿½D ï¿½ï¿½ï¿½Xï¿½Cï¿½Ó¤ï¿½ï¿½ï¿½ï¿½É¾\ï¿½Æ¶qï¿½eï¿½Tï¿½Wï¿½Ñ¥ï¿½ï¿½Î¼Æ¶q
---ï¿½lï¿½ï¿½ï¿½ï¿½Æªï¿½
+--²Ä¥|ÃD ¼´¥X¨C­Ó¤ÀÃþ­É¾\¼Æ¶q«e¤T¦W®Ñ¥»¤Î¼Æ¶q
+--­l¦ù¸ê®Æªí
 SELECT *
 FROM (
 	SELECT
-	--ï¿½ï¿½ï¿½ï¿½ROWNUMBERï¿½Oï¿½]ï¿½ï¿½ï¿½nï¿½Yï¿½ï¿½hï¿½Æ§ï¿½
+	--¤£¥ÎROWNUMBER¬O¦]¬°­nÄY®æ¥h±Æ§Ç
 		Seq = RANK() 
-		--ï¿½ï¿½OVER:ï¿½HBOOK_CLASS_NAMEï¿½ï¿½ï¿½Ì¾Ú¥hï¿½ï¿½ï¿½sï¿½Ã­pï¿½ï¿½Uï¿½sï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½yï¿½ï¿½ï¿½Æ¶qï¿½hï¿½Æ§ï¿½
+		--¥ÎOVER:¥HBOOK_CLASS_NAME¬°¨Ì¾Ú¥h¤À¸s¨Ã­pºâ¦U¸s¤º¦U®ÑÄyªº¼Æ¶q¥h±Æ§Ç
 			OVER(
 			PARTITION BY class.BOOK_CLASS_NAME
-			--DESCï¿½Ü­ï¿½ï¿½nï¿½Aï¿½Lï¿½Ì¾ï¿½COUNTï¿½Xï¿½Óªï¿½ï¿½hï¿½ï¿½hï¿½Æ§ï¿½
-			ORDER BY COUNT(*) DESC ),--ï¿½iï¿½Hï¿½ï¦¨BOOK_ID
+			ORDER BY COUNT(*) DESC),--¥i¥H§ï¦¨BOOK_ID
 		BookClass = class.BOOK_CLASS_NAME, 
 		BookId = DATA.BOOK_ID, 
 		BookName = DATA.BOOK_NAME, 
-		Cnt = COUNT(data.BOOK_ID)--ï¿½iï¿½Hï¿½ï¦¨BOOK_NAMEï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Fï¿½×§Kï¿½Ñ¦Wï¿½ï¿½ï¿½ï¿½ï¿½Ù¬Oï¿½ï¿½id
+		Cnt = COUNT(data.BOOK_ID)--¥i¥H§ï¦¨BOOK_NAME¡A¦ý¬O¬°¤FÁ×§K®Ñ¦W­«½ÆÁÙ¬O¥Îid
 	FROM dbo.BOOK_DATA AS data
 	INNER JOIN dbo.BOOK_LEND_RECORD AS record 
 		ON data.BOOK_ID = record.BOOK_ID
-	RIGHT OUTER JOIN dbo.BOOK_CLASS AS class --ï¿½ï¿½ï¿½ï¿½classï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½Ñ¥iï¿½ï¿½Sï¿½ï¿½ï¿½Qï¿½É¹Lï¿½Aï¿½ï¿½ï¿½Fï¿½×§Kï¿½ï¿½ï¿½Ç¸ï¿½Æ¨Sï¿½Qï¿½ï¿½ï¿½
+	RIGHT OUTER JOIN dbo.BOOK_CLASS AS class --¦³¨Çclass©³¤Uªº®Ñ¥i¯à¨S¦³³Q­É¹L¡A¬°¤FÁ×§K¨º¨Ç¸ê®Æ¨S³Qºâ¨ì
 		ON DATA.BOOK_CLASS_ID = class.BOOK_CLASS_ID
 	GROUP BY class.BOOK_CLASS_NAME, DATA.BOOK_ID, data.BOOK_NAME
 ) AS subQ
@@ -113,10 +112,10 @@ FROM cteBOOK_LEND_RANK AS [rank]
 WHERE Seq <= 3;
 GO
 
---ï¿½Ä¤ï¿½ï¿½D ï¿½Ð¦Cï¿½X 2016, 2017, 2018, 2019 ï¿½Uï¿½ï¿½ï¿½yï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½É¾\ï¿½Æ¶qï¿½ï¿½ï¿½
+--²Ä¤­ÃD ½Ð¦C¥X 2016, 2017, 2018, 2019 ¦U®ÑÄyÃþ§Oªº­É¾\¼Æ¶q¤ñ¸û
 SELECT bc.BOOK_CLASS_ID AS ClassId,
 	bc.BOOK_CLASS_NAME AS ClassName,
-	--ï¿½ï¿½ï¿½ï¿½ï¿½COUNTï¿½]ï¿½ï¿½ï¿½Cï¿½iï¿½hï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½|+1ï¿½ACOUNTï¿½Oï¿½Æ­Ó¼Æ¡ASUMï¿½Oï¿½[ï¿½`ï¿½M
+	--¤£¯à¥ÎCOUNT¦]¬°¨C¶i¥h¤@¦¸±ø¥ó´N·|+1¡ACOUNT¬O¼Æ­Ó¼Æ¡ASUM¬O¥[Á`©M
 	SUM(CASE WHEN YEAR(blr.LEND_DATE) = 2016 THEN 1 ELSE 0 END) AS CNT2016,
 	SUM(CASE WHEN YEAR(blr.LEND_DATE) = 2017 THEN 1 ELSE 0 END) AS CNT2017,
 	SUM(CASE WHEN YEAR(blr.LEND_DATE) = 2018 THEN 1 ELSE 0 END) AS CNT2018,
@@ -124,16 +123,16 @@ SELECT bc.BOOK_CLASS_ID AS ClassId,
 FROM BOOK_LEND_RECORD AS blr 
 	INNER JOIN BOOK_DATA AS bd
 		ON bd.BOOK_ID = blr.BOOK_ID	 
-	INNER JOIN BOOK_CLASS AS bc--ï¿½Î¬Oï¿½ï¿½RIGHT JOINï¿½Aï¿½ï¿½ï¿½Oï¿½Lï¿½oï¿½Dï¿½Oï¿½Æ­Ó¼Æ¡Aï¿½ï¿½ï¿½Î¦Ò¼{ï¿½ì¦³ï¿½ï¿½classï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½Ñ¥iï¿½ï¿½Sï¿½ï¿½ï¿½Qï¿½É¹L
+	INNER JOIN BOOK_CLASS AS bc--©Î¬O¥ÎRIGHT JOIN¡A¦ý¬O¥L³oÃD¬O¼Æ­Ó¼Æ¡A¤£­n¦Ò¼{¨ì¦³¨Çclass©³¤Uªº®Ñ¥i¯à¨S¦³³Q­É¹L
 		ON bc.BOOK_CLASS_ID = bd.BOOK_CLASS_ID	
 GROUP BY bc.BOOK_CLASS_ID, bc.BOOK_CLASS_NAME
 ORDER BY bc.BOOK_CLASS_ID;
 
---ï¿½Ä¤ï¿½ï¿½D ï¿½Ð¨Ï¥ï¿½ PIVOT ï¿½yï¿½kï¿½Cï¿½X2016, 2017, 2018, 2019 ï¿½Uï¿½ï¿½ï¿½yï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½É¾\ï¿½Æ¶qï¿½ï¿½ï¿½
+--²Ä¤»ÃD ½Ð¨Ï¥Î PIVOT »yªk¦C¥X2016, 2017, 2018, 2019 ¦U®ÑÄyÃþ§Oªº­É¾\¼Æ¶q¤ñ¸û
 IF OBJECT_ID('BOOK_CLASS_LEND') IS NOT NULL
 	DROP VIEW BOOK_CLASS_LEND;
 GO
---ï¿½Nï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½É¾\ï¿½ï¿½ï¿½Æ¦Cï¿½Xï¿½ï¿½(ï¿½Ò¥Hï¿½iï¿½ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½Æªï¿½)
+
 CREATE VIEW BOOK_CLASS_LEND
 AS 
 	SELECT class.BOOK_CLASS_ID AS ClassId
@@ -151,7 +150,7 @@ AS
 		  ,class.BOOK_CLASS_NAME
 		  ,record.LEND_DATE;
 GO
---ï¿½lï¿½ï¿½ï¿½ï¿½Æªï¿½
+
 SELECT ClassId,
 	ClassName,
 	ISNULL([2016],0) AS CNT2016,
@@ -165,28 +164,28 @@ PIVOT(SUM(Qty) FOR LendYear
 		) AS pvt
 ORDER BY ClassId;
 GO
---ï¿½Ä¤Cï¿½D ï¿½eï¿½Wï¿½Ð¨Ï¥ï¿½ PIVOT ï¿½yï¿½kï¿½Cï¿½X 2016, 2017, 2018, 2019 ï¿½Uï¿½ï¿½ï¿½yï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½É¾\ï¿½Æ¶qï¿½ï¿½ï¿½ (ï¿½ÊºAï¿½ï¿½ï¿½Rï¿½Ò¦ï¿½ï¿½~ï¿½ï¿½)
+--²Ä¤CÃD §e¤W½Ð¨Ï¥Î PIVOT »yªk¦C¥X 2016, 2017, 2018, 2019 ¦U®ÑÄyÃþ§Oªº­É¾\¼Æ¶q¤ñ¸û (°ÊºA¤ÀªR©Ò¦³¦~«×)
 DECLARE @CNT_columns NVARCHAR(MAX)=''
---@CNT_columnsï¿½Oyï¿½bï¿½ï¿½ï¿½ï¿½ì¤ºï¿½e
+--@CNT_columns¬Oy¶bªºÄæ¦ì¤º®e
 DECLARE @StrYears NVARCHAR(MAX)=''
 DECLARE @StrSql NVARCHAR(MAX)=''
---ï¿½Bï¿½z@CNT_columns
+--³B²z@CNT_columns
 SELECT @CNT_columns =
  @CNT_columns + 'ISNULL(' + QUOTENAME(YEAR(blr.LEND_DATE)) + ',0) AS CNT' + CONVERT(VARCHAR(4),YEAR(blr.LEND_DATE)) + ','
- --ISNULL([2016],0) AS CNT2016,ISNULL([2017],0) AS CNT2017,ISNULL([2018],0) AS CNT2018,ISNULL([2019],0) AS CNT2019,
+ --ISNULL([2016],0) AS CNT2016,ISNULL([2017],0) AS CNT2017,ISNULL([2018],0) AS CNT2018,ISNULL([2019],0) AS CNT2019
 FROM BOOK_LEND_RECORD AS blr
 GROUP BY YEAR(blr.LEND_DATE)
 ORDER BY YEAR(blr.LEND_DATE)
 
-SET @CNT_columns = LEFT(@CNT_columns, LEN(@CNT_columns) - 1)--ï¿½hï¿½ï¿½ï¿½Ì«áªº"ï¿½A"
+SET @CNT_columns = LEFT(@CNT_columns, LEN(@CNT_columns) - 1)--¥h±¼³Ì«áªº"¡A"
 --PRINT @CNT_columns
---ï¿½Bï¿½z@StrYears
+--³B²z@StrYears
 SELECT @StrYears = @StrYears + QUOTENAME(YEAR(blr.LEND_DATE)) + ',' 
-FROM BOOK_LEND_RECORD as blr
+FROM BOOK_LEND_RECORD blr
 GROUP BY YEAR(blr.LEND_DATE)
 ORDER BY YEAR(blr.LEND_DATE)
 
-SET @StrYears =  Left(@StrYears, Len(@StrYears) - 1)--ï¿½hï¿½ï¿½ï¿½Ì«áªº"ï¿½A"
+SET @StrYears =  Left(@StrYears, Len(@StrYears) - 1)--¥h±¼³Ì«áªº"¡A"
 --[2016],[2017],[2018],[2019]
 PRINT @StrYears 
 
@@ -202,23 +201,23 @@ SET @StrSql = N'SELECT ClassId,
 
 EXEC (@StrSql)
 GO
---ï¿½Ä¤Kï¿½D ï¿½Ð¬dï¿½ß¥Xï¿½ï¿½ï¿½|(USER_ID =0002)ï¿½ï¿½ï¿½É®Ñ¬ï¿½ï¿½ï¿½ï¿½Aï¿½ä¤¤ï¿½]ï¿½tï¿½Ñ¥ï¿½IDï¿½Bï¿½Ê®Ñ¤ï¿½ï¿½(yyyy/mm/dd)ï¿½Bï¿½É¾\ï¿½ï¿½ï¿½(yyyy/mm/dd)ï¿½B
----ï¿½ï¿½ï¿½yï¿½ï¿½ï¿½O(id-name)ï¿½Bï¿½É¾\ï¿½H(id-cname(ename))ï¿½Bï¿½ï¿½ï¿½A(id-name)ï¿½Bï¿½Ê®Ñªï¿½ï¿½B
+--²Ä¤KÃD ½Ð¬d¸ß¥X§õ¥|(USER_ID =0002)ªº­É®Ñ¬ö¿ý¡A¨ä¤¤¥]§t®Ñ¥»ID¡BÁÊ®Ñ¤é´Á(yyyy/mm/dd)¡B­É¾\¤é´Á(yyyy/mm/dd)¡B
+---®ÑÄyÃþ§O(id-name)¡B­É¾\¤H(id-cname(ename))¡Bª¬ºA(id-name)¡BÁÊ®Ñª÷ÃB
 IF OBJECT_ID('view_LEND_BOOK') IS NOT NULL
 	DROP VIEW  view_LEND_BOOK;
 GO
---ï¿½Uï¿½ï¿½{ï¿½ï¿½ï¿½X,ï¿½Ñ¼ï¿½1ï¿½O: ï¿½Oï¿½dï¿½pï¿½Æ¦ï¿½ï¿½ï¿½ï¿½,ï¿½Ã¥|ï¿½Ë¤ï¿½ï¿½J,ï¿½Bï¿½ï¿½ï¿½dï¿½ï¿½ï¿½ï¿½rï¿½I,ï¿½]ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½
---Replaceï¿½ï¿½Æ¬Oï¿½Ä¤@ï¿½Ó°Ñ¼Æ¸Ì¦ï¿½ï¿½Ä¤Gï¿½Ó°Ñ¼Æ¥Xï¿½{ï¿½É¥Î²Ä¤Tï¿½Ó°Ñ¼Æ¥hï¿½ï¿½ï¿½Nï¿½Ä¤Gï¿½Ó°Ñ¼ï¿½
-
+--¤U¤èµ{¦¡½X,°Ñ¼Æ1¬O: «O¯d¤p¼Æ¦ì«á¨â¦ì,¨Ã¥|±Ë¤­¤J,¥B¦³¤d¤À¦ì³rÂI,¦]¦¹­n®ø±¼¤p¼ÆÂI«á¨â¦ì
+--Replace¨ç¼Æ¬O²Ä¤@­Ó°Ñ¼Æ¸Ì¦³²Ä¤G­Ó°Ñ¼Æ¥X²{®É¥Î²Ä¤T­Ó°Ñ¼Æ¥h¨ú¥N²Ä¤G­Ó°Ñ¼Æ
 CREATE VIEW view_LEND_BOOK
 AS
-	SELECT blr.BOOK_ID AS ï¿½Ñ¥ï¿½ID
-	      ,CONVERT(VARCHAR(10), bd.BOOK_BOUGHT_DATE,111) AS ï¿½Ê®Ñ¤ï¿½ï¿½
-		  ,CONVERT(VARCHAR(10), blr.LEND_DATE,111) AS ï¿½É¾\ï¿½ï¿½ï¿½--111ï¿½Oyyyy/mm/ddï¿½Î¦ï¿½
-		  ,bd.BOOK_CLASS_ID + '-' + bc1.BOOK_CLASS_NAME AS ï¿½ï¿½ï¿½yï¿½ï¿½ï¿½O
-		  ,mm.[USER_ID] + '-' +mm.USER_CNAME + '(' + mm.USER_ENAME + ')' AS ï¿½É¾\ï¿½H
-		  ,bc.CODE_ID + '-' + bc.CODE_NAME AS ï¿½ï¿½ï¿½A
-		  ,Replace(Convert(Varchar(10),CONVERT(money,bd.BOOK_AMOUNT),1),'.00','')+'ï¿½ï¿½' AS ï¿½Ê®Ñªï¿½ï¿½B
+	SELECT blr.BOOK_ID AS ®Ñ¥»ID
+		  ,CONVERT(VARCHAR(4),YEAR(bd.BOOK_BOUGHT_DATE))+'/'+CONVERT(VARCHAR(2),MONTH(bd.BOOK_BOUGHT_DATE))
+		  +'/'+CONVERT(VARCHAR(2),DAY(bd.BOOK_BOUGHT_DATE)) AS ÁÊ®Ñ¤é´Á
+		  ,CONVERT(VARCHAR(10), blr.LEND_DATE,111) AS ­É¾\¤é´Á--111¬Oyyyy/mm/dd§Î¦¡
+		  ,bd.BOOK_CLASS_ID + '-' + bc1.BOOK_CLASS_NAME AS ®ÑÄyÃþ§O
+		  ,mm.[USER_ID] + '-' +mm.USER_CNAME + '(' + mm.USER_ENAME + ')' AS ­É¾\¤H
+		  ,bc.CODE_ID + '-' + bc.CODE_NAME AS ª¬ºA
+		  ,Replace(Convert(Varchar(10),CONVERT(money,bd.BOOK_AMOUNT),1),'.00','')+'¤¸' AS ÁÊ®Ñª÷ÃB
 	FROM BOOK_LEND_RECORD AS blr
 	INNER JOIN MEMBER_M AS mm
 		ON mm.[USER_ID] = blr.KEEPER_ID
@@ -229,30 +228,24 @@ AS
 	INNER JOIN BOOK_CLASS AS bc1
 		ON bc1.BOOK_CLASS_ID = bd.BOOK_CLASS_ID
 	WHERE bc.CODE_TYPE = 'BOOK_STATUS'
-	--ï¿½nï¿½ï¿½ï¿½wCode.CODE_TYPE='BOOK_STATUS'ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½å«¬ï¿½ï¿½Æ²Vï¿½bï¿½Ì­ï¿½,ï¿½nï¿½Æ°ï¿½ï¿½ï¿½
+	--­n«ü©wCode.CODE_TYPE='BOOK_STATUS'±ø¥ó¦]¬°¦³¦å«¬¸ê®Æ²V¦b¸Ì­±,­n±Æ°£±¼
 	AND mm.[USER_ID] ='0002';
 GO
 
-
 SELECT *
 FROM view_LEND_BOOK
-ORDER BY ï¿½Ñ¥ï¿½ID DESC;
+ORDER BY ®Ñ¥»ID DESC;
 
---ï¿½Ä¤Eï¿½D ï¿½sï¿½Wï¿½@ï¿½ï¿½ï¿½É¾\ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½É®Ñ¤Hï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½Aï¿½Ñ¥ï¿½IDï¿½ï¿½2294ï¿½Aï¿½É¾\ï¿½ï¿½ï¿½ï¿½ï¿½2021/01/01ï¿½Aï¿½Ã§ï¿½sï¿½ï¿½ï¿½yï¿½Dï¿½Éªï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½wï¿½É¥Xï¿½Bï¿½É¾\ï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½|
---CRE_DATE:ï¿½Ø¥ß®É¶ï¿½ CRE_USR:ï¿½Ø¥ß¨Ï¥Îªï¿½
-DECLARE @USERID VARCHAR(4) ;
---å»ºè­°ä¸è¦ç”¨åå­å› ç‚ºæ€•æœ‰äººåå­ç›¸åŒ
-SET @USERID = (SELECT mm.[USER_ID] FROM MEMBER_M mm WHERE mm.USER_CNAME = 'ï¿½ï¿½ï¿½|');
---@USERID = '0002'
---PRINT @USERID;
+--²Ä¤EÃD ·s¼W¤@µ§­É¾\¬ö¿ý¡A­É®Ñ¤H¬°§õ¥|¡A®Ñ¥»ID¬°2294¡A­É¾\¤é´Á¬°2021/01/01¡A¨Ã§ó·s®ÑÄy¥DÀÉªºª¬ºA¬°¤w­É¥X¥B­É¾\¤H¬°§õ¥|
+--CRE_DATE:«Ø¥ß®É¶¡ CRE_USR:«Ø¥ß¨Ï¥ÎªÌ
 BEGIN TRY
 	BEGIN TRAN
 		INSERT INTO BOOK_LEND_RECORD(KEEPER_ID, BOOK_ID, LEND_DATE, CRE_DATE, CRE_USR) 
-			VALUES(@USERID, '2294', '2021/01/01', GETDATE(), '0002')
+			VALUES((SELECT mm.[USER_ID] FROM MEMBER_M mm WHERE mm.USER_CNAME = '§õ¥|'), '2294', '2021/01/01', GETDATE(), '0002')
 		
 		UPDATE BOOK_DATA
-		SET BOOK_STATUS = 'B',--ï¿½wï¿½É¥X
-			BOOK_KEEPER = @USERID,
+		SET BOOK_STATUS = 'B',
+			BOOK_KEEPER = (SELECT mm.[USER_ID] FROM MEMBER_M mm WHERE mm.USER_CNAME = '§õ¥|'),
 			MODIFY_DATE = GETDATE(),
 			MODIFY_USER = '0002'
 		WHERE BOOK_ID = '2294'
@@ -264,18 +257,18 @@ BEGIN CATCH
 END CATCH;
 
 SELECT *
-FROM view_LEND_BOOK--ï¿½Î¨Ó¬dï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½É®Ñ¬ï¿½ï¿½ï¿½
-ORDER BY ï¿½Ñ¥ï¿½ID DESC;
+FROM view_LEND_BOOK--¥Î¨Ó¬d§õ¥|ªº­É®Ñ¬ö¿ý
+ORDER BY ®Ñ¥»ID DESC;
 
---ï¿½Ä¤Qï¿½D ï¿½Ð±Nï¿½D9ï¿½sï¿½Wï¿½ï¿½ï¿½É¾\ï¿½ï¿½ï¿½ï¿½(ï¿½Ñ¥ï¿½ID=2004)ï¿½Rï¿½ï¿½ 
---ï¿½ï¿½ï¿½ï¿½:ï¿½Oï¿½Rï¿½ï¿½ID=2294
+--²Ä¤QÃD ½Ð±NÃD9·s¼Wªº­É¾\¬ö¿ý(®Ñ¥»ID=2004)§R°£ 
+--³´¨À:¬O§R±¼ID=2294
 BEGIN TRY
 	BEGIN TRAN
 		DELETE FROM BOOK_LEND_RECORD WHERE BOOK_ID = '2294' AND KEEPER_ID = '0002' AND LEND_DATE = '2021/01/01'
 
 		UPDATE BOOK_DATA
-		SET BOOK_STATUS = 'A',--ï¿½iï¿½É¥X
-			BOOK_KEEPER = (SELECT mm.[USER_ID] FROM MEMBER_M mm WHERE mm.USER_CNAME = 'ï¿½ï¿½ï¿½|'),--@USERID
+		SET BOOK_STATUS = 'A',
+			BOOK_KEEPER = (SELECT mm.[USER_ID] FROM MEMBER_M mm WHERE mm.USER_CNAME = '§õ¥|'),--¤£­n¥ÎUSER_CNAME©È¦³¤H¦P¦W­n¥Îid
 			MODIFY_DATE = GETDATE(),
 			MODIFY_USER = '0002'
 		WHERE BOOK_ID = '2294'
@@ -288,4 +281,4 @@ END CATCH;
 
 SELECT *
 FROM view_LEND_BOOK
-ORDER BY ï¿½Ñ¥ï¿½ID DESC;
+ORDER BY ®Ñ¥»ID DESC;
