@@ -1,6 +1,6 @@
 ﻿$(function () {
     /*** 初始化各個網頁物件及註冊事件 ***/
-    $("#BtnAddBook").kendoButton();
+
     /*** 彈出視窗 ***/
     $("#BookDataWindow").kendoWindow({
         width: "400px",
@@ -15,6 +15,9 @@
     });
     
     /*** 視窗上的各個物件 ***/
+    $("#BtnAddBook").kendoButton();
+    $("#BtnUpdateBook").kendoButton();
+    $("#BtnDeleteBook").kendoButton();
     $("#WindowBookName").kendoTextBox();
     $("#WindowBookAuthor").kendoTextBox();
     $("#WindowBookPublisher").kendoTextBox();
@@ -27,7 +30,7 @@
         dateInput: true,
         value: new Date()
     });
-
+    //借閱人
     MakeKendoDropDownList("#WindowBooKeeper", "/BookData/GetSearchUserTable", { "ReturnType": "WithChName" });
 
     /*** 查詢畫面上的各個物件 ***/

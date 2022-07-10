@@ -21,18 +21,51 @@ namespace LibrarySystem.Controllers
         }
 
         /// <summary>
-        /// 使用條件查詢後頁面
+        /// 取得圖書類別之資料
         /// </summary>
-        /// <param name="condition">搜尋條件</param>
-        /// <returns></returns>
+        /// <returns>以Json格式將List(類別名稱、類別代號)回傳至Kendo DropDownList</returns>
         [HttpPost]
-        public ActionResult Index(Models.BookSearch condition)
+        public JsonResult GetBookClassTable()
         {
-            //ModelState的值有最高的顯示優先權，而透過ModelState.Clear()將值清空之後，改以第二順位的Action指定的Model值來做顯示
-            ModelState.Clear();
-
-            return View("Index");
+            return this.Json(CodeService.GetClassTable());
         }
+
+        /// <summary>
+        /// 藉由傳入參數決定如何顯示使用者
+        /// </summary>
+        /// <param name="ReturnType">有WithChName以及OnlyEngName兩種，
+        /// 分別是帶有中文姓名或只有英文姓名</param>
+        /// <returns>以Json格式將List(英文姓名、使用者編號或英-中文姓名、使用者編號)
+        /// 回傳至Kendo DropDownList</returns>
+        [HttpPost]
+        public JsonResult GetSearchUserTable(string ReturnType)
+        {
+            return this.Json(CodeService.GetUserTable(ReturnType));
+        }
+
+        /// <summary>
+        /// 取得借閱狀態之資料
+        /// </summary>
+        /// <returns>以Json格式將List(借閱狀態名稱、借閱狀態代號)回傳至Kendo DropDownList</returns>
+        [HttpPost]
+        public JsonResult GetBookStatusTable()
+        {
+            return this.Json(CodeService.GetCodeTable());
+        }
+
+        /// <summary>
+        /// 藉由傳入的物件(查詢條件)來進行書籍資料的查詢
+        /// </summary>
+        /// <param name="SearchCondition">查詢畫面上的各個條件
+        /// (書名、圖書類別、借閱人、借閱狀態)所組成的物件</param>
+        /// <returns>以Json格式將查詢結果(圖書類別、書名、購書日期、借閱狀態、借閱人以及其他資料)
+        /// 回傳至Kendo Grid上</returns>
+        [HttpPost]
+        public JsonResult GetSearchResult(Models.BookSearch SearchCondition)
+        {
+            return this.Json(BookService.GetSearchBookData(SearchCondition));
+        }
+
 
         /// <summary>
         /// 新增書籍頁面

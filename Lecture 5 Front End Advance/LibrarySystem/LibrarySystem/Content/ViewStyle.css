@@ -1,0 +1,13 @@
+﻿#BookDataWindow {
+    display: none;
+    list-style: none;
+    text-align: left;
+}
+
+#BookDataWindow li {
+    padding-bottom: 10px;
+}
+
+#BookStatusListItem, #BooKeeperListItem, #BtnAddBook, #BtnUpdateBook, #BtnDeleteBook, #WindowBookId, #LendRecordWindow {
+    display: none;
+}
