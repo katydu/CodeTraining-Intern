@@ -96,7 +96,7 @@ namespace LibrarySystem.Models
             foreach (DataRow row in ClassTable.Rows)
             {
 
-                if (ReturnType == "W")
+                if (ReturnType == "WithChName")
                 {
                     Borrowers.Add(new SelectListItem()
                     {
@@ -104,7 +104,7 @@ namespace LibrarySystem.Models
                         Value = row["Id"].ToString()
                     });
                 }
-                else if (ReturnType == "O")
+                else if (ReturnType == "OnlyEngName")
                 {
                     Borrowers.Add(new SelectListItem()
                     {

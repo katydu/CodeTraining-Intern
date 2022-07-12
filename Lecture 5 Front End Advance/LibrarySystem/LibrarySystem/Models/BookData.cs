@@ -106,5 +106,14 @@ namespace LibrarySystem.Models
         /// </summary>
         [DisplayName("紀錄修改人")]
         public string ModifyUser { get; set; }
+
+        [DisplayName("借閱人編號")]
+        public string KeeperId { get; set; }
+
+        [DisplayName("借閱狀態代號")]
+        public string StatusCode { get; set; }
+
+        [DisplayName("圖書類別代號")]
+        public string ClassCode { get; set; }
     }
 }

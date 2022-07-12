@@ -1,24 +1,27 @@
 ﻿<style>
     li {
-        list-style:none;
+        list-style: none;
     }
-    #BookDataWindow label:before {
+
+    #BookDataWindow .RedSpot:before {
         content: "*";
         color: red;
         font-size: larger;
     }
+
     #BookDataWindow span {
-        width:90% !important;
+        width: 90% !important;
     }
+
     #WindowBoughtDate {
         width: 90% !important;
     }
+
     #BookDataWindow button {
-        float: right;
+        /*float: right;*/
         margin-top: 20px;
         margin-right: 10px;
     }
-
 </style>
 <h2>首頁</h2>
 
@@ -28,7 +31,7 @@
 <ul id="BookDataWindow">
     <div id="Validator">
         <li>
-            <label>書名</label>
+            <label class="RedSpot">書名</label>
             <br />
             <input type="text" id="WindowBookName" name="BookName" class="WindowTextBox" required />
         </li>
@@ -36,32 +39,32 @@
             <input type="text" id="WindowBookId" style="display:none"/>
         </li>
         <li>
-            <label>作者</label>
+            <label class="RedSpot">作者</label>
             <br />
             <input type="text" id="WindowBookAuthor" name="BookAuthor" class="WindowTextBox" required />
         </li>
         <li>
-            <label>出版商</label>
+            <label class="RedSpot">出版商</label>
             <br />
             <input type="text" id="WindowBookPublisher" name="Publisher" class="WindowTextBox" required />
         </li>
         <li>
-            <label>內容簡介</label>
+            <label class="RedSpot">內容簡介</label>
             <br />
             <textarea id="WindowBookNote" name="BookNote" required></textarea>
         </li>
         <li>
-            <label>購書日期</label>
+            <label class="RedSpot">購書日期</label>
             <br />
-            <input type="text" id="WindowBoughtDate" name="BoughtDatePicker" />
+            <input type="text" id="WindowBoughtDate" name="BoughtDatePicker" class="RedSpot" />
         </li>
         <li>
-            <label>圖書類別</label>
+            <label class="RedSpot">圖書類別</label>
             <br />
             <select id="WindowBookClass" class="BookClass WindowDropDownList" name="BookClass" required></select>
         </li>
         <li id="BookStatusListItem">
-            <label>借閱狀態</label>
+            <label class="RedSpot">借閱狀態</label>
             <br />
             <select id="WindowBookStatus" class="BookStatus WindowDropDownList"></select>
         </li>
@@ -71,9 +74,9 @@
             <select id="WindowBooKeeper" class="BooKeeper WindowDropDownList"></select>
         </li>
         <li>
-            <button id="BtnAddBook" class="btn btn-default ButtonGroup">新增</button>
-            <button id="BtnUpdateBook" class="btn btn-default ButtonGroup UpdateButtonGroup">存檔</button>
-            <button id="BtnDeleteBook" class="btn btn-default ButtonGroup UpdateButtonGroup">刪除</button>
+            <button id="BtnAddBook" class="btn btn-default ">新增</button>
+            <button id="BtnUpdateBook" class="btn btn-default  UpdateButtonGroup">存檔</button>
+            <button id="BtnDeleteBook" class="btn btn-default  UpdateButtonGroup">刪除</button>
         </li>
     </div>
 </ul>

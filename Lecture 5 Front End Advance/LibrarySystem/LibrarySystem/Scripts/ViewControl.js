@@ -30,11 +30,12 @@
         dateInput: true,
         value: new Date()
     });
-    //借閱人
+    //借閱人，靠id或class去區分
     MakeKendoDropDownList("#WindowBooKeeper", "/BookData/GetSearchUserTable", { "ReturnType": "WithChName" });
 
     /*** 查詢畫面上的各個物件 ***/
     $("#BookName").kendoAutoComplete({
+        //contains是只要搜尋裡面包含就算
         filter: "contains",
         dataSource: {
             transport: {
@@ -45,10 +46,12 @@
                 }
             }
         },
+        //This is the text that will be displayed in the list of matched results
         dataTextField: "BookName",
+        //widget automatically adjusts the width of the popup element and does not wrap up the item label
         autoWidth: true
     });
-
+    //search頁面的下拉選單
     MakeKendoDropDownList(".BookClass", "/BookData/GetBookClassTable", "");
     MakeKendoDropDownList("#BooKeeper", "/BookData/GetSearchUserTable", { "ReturnType": "OnlyEngName" });
     MakeKendoDropDownList(".BookStatus", "/BookData/GetBookStatusTable", "")
@@ -63,6 +66,7 @@
                     type: "post",
                     data: function () {
                         return {
+                            //因BookName沒有設定kendo textbox所以用auto complete
                             "BookName": $("#BookName").data("kendoAutoComplete").value(),
                             "BookClass": $("#BookClass").data("kendoDropDownList").value(),
                             "BookStatus": $("#BookStatus").data("kendoDropDownList").value(),
@@ -71,6 +75,7 @@
                     }
                 }
             },
+            //used to parse the remote service response,fields裡面是搜尋結果後的grid欄位
             schema: {
                 model: {
                     fields: {
@@ -82,13 +87,17 @@
                     }
                 }
             },
+            //一頁塞幾個內容結果
             pageSize: 20,
         },
         height: 550,
-        width: 1250,
+        width: 1200,
+        //user could sort the grid by clicking the column header cells
         sortable: true,
         pageable: {
+            //grid下方有textbox可以輸入頁碼
             input: true,
+            //預設是true,下方沒有個欄位頁碼的按鈕可以選
             numeric: false
         },
         columns: [
@@ -102,7 +111,8 @@
                 title: "書籍名稱",
                 width: "45%",
                 template:
-                    function (dataItem) { //TODO: 加前綴詞
+                    //書名超連結至明細
+                    function (dataItem) { 
                         return '<a id = "' + dataItem.BookId + '" onclick = "ShowBookDetail(' + dataItem.BookId + ')">' + kendo.htmlEncode(dataItem.BookName) + '</a>';
                     }
             },
@@ -204,12 +214,14 @@ function MakeKendoDropDownList(DropDownListId, Url, Data) {
                     url: Url,
                     dataType: "json",
                     type: "post",
+                    //傳給下一個函式(GetSearchUserTable的ReturnType)的資料
                     data: function () {
                         return Data
                     }
                 }
             },
         },
+        //不加下面兩行會導致下拉選單的選項呈現:object Object
         dataTextField: "Text",
         dataValueField: "Value",
         optionLabel: "請選擇..."
@@ -235,13 +247,11 @@ function GetWindowBookComponents() {
  * 刷新Kendo Window上的所有物件並依照傳入參數開啟相應的Window
  * @param {any} WindowType 可為AddBook、UpdateBook、BookDetails三種
  * 依據參數的不同來決定Window上的差異
+ * LendDetail()是控制
  */
 function RefreshAndOpenTheWindow(WindowType) {
     SetWindowComponentValue("");
-    //$(".ButtonGroup").hide();
     //ControlWindowComponentsReadStatus(false);
-
-
     switch (WindowType) {
         case "AddBook":
             ChangeWindowTitle(WindowType);
@@ -285,17 +295,20 @@ function LendDetail(ViewType) {
  * @param {any} ThisBookData
  */
 function SetWindowComponentValue(ThisBookData) {
+    console.log(ThisBookData);//對的
     const WindowComponents = GetWindowBookComponents();
-
+    console.log(WindowComponents);
+    debugger;
     if (ThisBookData != "") {
         WindowComponents.BookName.value(ThisBookData.BookName);
         WindowComponents.BookAuthor.value(ThisBookData.BookAuthor);
         WindowComponents.BookPublisher.value(ThisBookData.Publisher);
         WindowComponents.BookNote.value(ThisBookData.BookNote);
         WindowComponents.BoughtDate.value(new Date(ThisBookData.BoughtDate));
-        WindowComponents.BookClass.value(ThisBookData.ClassCode);
+        WindowComponents.BookClass.value(ThisBookData.ClassId);
+        debugger;
         WindowComponents.BookStatus.value(ThisBookData.StatusCode);
-        WindowComponents.BooKeeper.value(ThisBookData.KeeperId);
+        WindowComponents.BooKeeper.value(ThisBookData.BooKeeper);//KeeperId
         WindowComponents.BookId.val(ThisBookData.BookId);
     } else {
         WindowComponents.BookName.value("");
@@ -389,7 +402,6 @@ function ClearSearchCondition() {
 /*** 將Window上填入的資料帶入物件中，再以Ajax傳遞並新增書籍 ***/
 function AddBookData() {
     const WindowComponents = GetWindowBookComponents();
-
     const AddedData = {
         "BookName": WindowComponents.BookName.value(),
         "BookAuthor": WindowComponents.BookAuthor.value(),
@@ -398,7 +410,6 @@ function AddBookData() {
         "BoughtDate": kendo.toString(WindowComponents.BoughtDate.value(), "yyyy/MM/dd"),
         "ClassId": WindowComponents.BookClass.value()
     }
-
     const AddedWindow = $("#BookDataWindow").data("kendoWindow");
     const Grid = $("#SerachGrid").data("kendoGrid");
     const Validator = $("#Validator").data("kendoValidator");
@@ -410,6 +421,7 @@ function AddBookData() {
                 alert("書籍 (" + WindowComponents.BookName.value() + ") 新增成功");
                 AddedWindow.close();
                 Grid.dataSource.read();
+                //我猜是要把新增的書也加進去auto complete裡
                 BookNameAutoComplete.dataSource.read();
             } else {
                 alert("書籍新增失敗");
@@ -481,7 +493,7 @@ function ShowUpdateBookData(BtnShowUpdateWindow) {
     const Grid = $("#SerachGrid").data("kendoGrid");
     const ThisTableRow = $(BtnShowUpdateWindow.target).closest("tr");
     const ThisBookData = Grid.dataItem(ThisTableRow);
-
+    debugger
     RefreshAndOpenTheWindow("UpdateBook");
     SetWindowComponentValue(ThisBookData);
     BindBookStatusAndKeeper(ThisBookData.KeeperId);
@@ -491,7 +503,6 @@ function ShowUpdateBookData(BtnShowUpdateWindow) {
 /*** 是否增加書籍借閱紀錄則在後台判斷 ***/
 function UpdateBookData() {
     const WindowComponents = GetWindowBookComponents();
-
     const UpdatedData = {
         "BookName": WindowComponents.BookName.value(),
         "BookAuthor": WindowComponents.BookAuthor.value(),
@@ -503,7 +514,6 @@ function UpdateBookData() {
         "BooKeeper": WindowComponents.BooKeeper.value(),
         "BookId": WindowComponents.BookId.val()
     }
-
     const UpdateWindow = $("#BookDataWindow").data("kendoWindow");
     const Grid = $("#SerachGrid").data("kendoGrid");
     const Validator = $("#Validator").data("kendoValidator");
@@ -592,7 +602,7 @@ function ShowBookLendRecord(BtnShowBookLendRecord) {
         ]
     });
 
-    $("#LendRecordWindow").data("kendoWindow").open();
+    $("#LendRecordWindow").data("kendoWindow").open().center();
 }
 
 /**
@@ -601,16 +611,19 @@ function ShowBookLendRecord(BtnShowBookLendRecord) {
  * @param {any} DetailsBookId 超連結標籤的id
  */
 function ShowBookDetail(DetailsBookId) {
+
     const Grid = $("#SerachGrid").data("kendoGrid");
     const ThisTableRow = $("#" + DetailsBookId).closest("tr");
     const ThisBookData = Grid.dataItem(ThisTableRow);
 
     RefreshAndOpenTheWindow("BookDetails");
+    //判斷彈出視窗內的欄位是否唯讀
     ControlWindowComponentsReadStatus();
+    //將明細內容填進去
     SetWindowComponentValue(ThisBookData);
 }
 
-
+//更改各window的標題字
 function ChangeWindowTitle(WindowType) {
     var BookDataWindow = $("#BookDataWindow").data("kendoWindow");
     switch (WindowType) {
