@@ -33,5 +33,6 @@ namespace LibrarySystem.Models
         /// </summary>
         [DisplayName("借閱狀態")]
         public string BookStatus { get; set; }
+
     }
 }

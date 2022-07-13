@@ -46,7 +46,10 @@ namespace LibrarySystem.Models
                             	Data.CREATE_DATE AS '紀錄建立日期',
                             	Data.CREATE_USER AS '紀錄建立人',
                             	Data.MODIFY_DATE AS '紀錄修改日期',
-                            	Data.MODIFY_USER AS '紀錄修改人'
+                            	Data.MODIFY_USER AS '紀錄修改人',
+                                Record.KEEPER_ID AS KeeperID,
+	                            Class.BOOK_CLASS_ID AS ClassCode,
+	                            Code.CODE_ID AS StatusCode
                             FROM BOOK_DATA AS Data
                             INNER JOIN BOOK_CLASS AS Class
                             	ON Data.BOOK_CLASS_ID = Class.BOOK_CLASS_ID
@@ -55,6 +58,8 @@ namespace LibrarySystem.Models
                             INNER JOIN BOOK_CODE AS Code
                             	ON Data.BOOK_STATUS = Code.CODE_ID
                             	AND Code.CODE_TYPE = 'BOOK_STATUS'
+                            LEFT JOIN BOOK_LEND_RECORD AS Record
+	                            ON Data.BOOK_ID = Record.BOOK_ID
                             WHERE
                             	(Data.BOOK_CLASS_ID = @BookClass OR @BookClass = '') AND
                             	(Data.BOOK_NAME LIKE '%' + @BookName + '%') AND
@@ -101,6 +106,9 @@ namespace LibrarySystem.Models
                     BookStatus = row["借閱狀態"].ToString(),
                     BooKeeper = row["借閱人"].ToString(),
                     BookAuthor = row["作者"].ToString(),
+                    KeeperId = row["KeeperID"].ToString(),
+                    ClassCode = row["ClassCode"].ToString(),
+                    StatusCode = row["StatusCode"].ToString()
                     //CreateDate = row["紀錄建立日期"].ToString(),
                     //CreateUser = row["紀錄建立人"].ToString(),
                     //ModifyDate = row["紀錄修改日期"].ToString(),
@@ -232,7 +240,11 @@ namespace LibrarySystem.Models
                 BookNote = row["內容簡介"].ToString(),
                 BookStatus = row["書本狀態"].ToString(),
                 BooKeeper = row["借閱人"].ToString(),
+                //KeeperId = row["KeeperID"].ToString(),
+                //ClassCode = row["ClassCode"].ToString(),
+                //StatusCode = row["StatusCode"].ToString()
             };
+            
             return ThisBookData;
         }
         /// <summary>

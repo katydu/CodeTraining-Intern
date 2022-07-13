@@ -175,6 +175,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\BookData\LendRecord.cshtml" />
     <Content Include="Views\Error\error.cshtml" />
+    <Content Include="Views\BookData\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
