@@ -28,7 +28,7 @@ This is my note about SQL on hackMD: https://hackmd.io/buCn9cEMQO2F0KWqWM5V2A?vi
 #### What I learned
 
 1. Learning using **[Kendo UI](https://docs.telerik.com/kendo-ui/api/javascript/kendo)** to beauty the front-end 
-2. Figure out what is **LocalStorage** and using it to store data
+2. Figure out what is **[LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)** and using it to store data
 3. Learning some basic **javascript** and **jQuery** to create functions and events
 
 This is my note about Front End Basic on hackMD:https://hackmd.io/nzPJVhgiShWj-vnBQts8aw
