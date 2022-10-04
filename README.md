@@ -58,6 +58,12 @@ This is my note about MVC on hackMD:https://hackmd.io/8W9usrdGQlKmE3YziTDihw
 
 This is my note about Front End Advance on hackMD:https://hackmd.io/gqlliruQQrae_LbazeQN4A
 
+## Lecture 6 Back End
+
+#### What I learned
+
+
+
 ------
 
-#### Date: July 2022
+#### Date: July 2022~October 2022
