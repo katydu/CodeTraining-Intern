@@ -6,13 +6,13 @@ The most impressive section is I can clearly know how to connect front-end and b
 
 ## About Library system
 
-It has the basic functions likes **CRUD**, user can insert/delete/upload/search the books. Also this system provides the **lending record** on all the books. User can easily know who had borrowed this book before. The last one is the **book detail**. In detail user can quickly get the information about this book.
+It has the basic functions likes **CRUD**, user can insert/delete/upload/search the books. Also this system provides the **lending record** on all the books. User can easily know who had borrowed this book before. The last one is the **book detail**. In detail user can quickly get the information about this book. All functions have basic **validations**. For example: wrong content, wrong date format, etc.
 
 ## Lecture 2 SQL
 
-### 內容 Content
+#### What I learned
 
-Using Microsoft SQL Server learning T-SQL
+1. Learning T-SQL by using Microsoft SQL Server
 
 |       File       |                         Content                          |
 | :--------------: | :------------------------------------------------------: |
@@ -37,7 +37,12 @@ This is my note about Front End Basic on hackMD:https://hackmd.io/nzPJVhgiShWj-v
 
 #### What I learned
 
-1. 
+1. Learning  **ASP.NET Core MVC**
+   - Relation between Model, View and Controller
+   - Razor syntax
+   - Model binding
+
+2. Connect MS SQL with ASP.NET
 
 This is my note about MVC on hackMD:https://hackmd.io/8W9usrdGQlKmE3YziTDihw
 
@@ -45,7 +50,11 @@ This is my note about MVC on hackMD:https://hackmd.io/8W9usrdGQlKmE3YziTDihw
 
 #### What I learned
 
-1. 
+1. Replace ViewBag with **AJax**
+   - Realize the real way to connect font-end and back-end
+   - Difference between POST and GET
+
+2. Using what I learned at lecture 3  **[Kendo UI](https://docs.telerik.com/kendo-ui/api/javascript/kendo)** to beauty the front-end 
 
 This is my note about Front End Advance on hackMD:https://hackmd.io/gqlliruQQrae_LbazeQN4A
 
