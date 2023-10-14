@@ -37,7 +37,7 @@ This is my note about Front End Basic on hackMD:https://hackmd.io/nzPJVhgiShWj-v
 
 #### What I learned
 
-1. Learning  **ASP.NET Core MVC**
+1. Learning  **ASP.NET MVC**
    - Relation between Model, View and Controller
    - Razor syntax
    - Model binding
