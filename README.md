@@ -1,4 +1,4 @@
-# CodeTraining-GSS
+# CodeTraining
 
 When I'm a intern at Company, I learned about building a Library Management System. It's a whole complete process to learn all the knowledge you need about building a Library system. 
 
