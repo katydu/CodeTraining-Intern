@@ -1,10 +1,10 @@
 # CodeTraining
 
-When I was an intern at the Company, I learned about building a Library Management System. It's a whole complete process to learn all the knowledge you need about building a Library system. 
+When I was an intern at the Company, I learned about building a Library Management System. It's a whole complete process to learn all the knowledge you need about building a Library Management System.
 
 The most impressive section is I clearly know how to connect front-end and back-end.
 
-## About Library system
+## About Library Management System
 
 It has basic functions like **CRUD**, the user can insert/delete/upload/search the books. Also, this system provides the **lending record** on all the books. Users can easily know who had borrowed this book before. The last one is the **book detail**. In detail, users can quickly get the information about this book. All functions have basic **validations**. For example: wrong content, wrong date format, etc.
 
