@@ -1,12 +1,12 @@
 # CodeTraining
 
-When I'm a intern at Company, I learned about building a Library Management System. It's a whole complete process to learn all the knowledge you need about building a Library system. 
+When I was an intern at the Company, I learned about building a Library Management System. It's a whole complete process to learn all the knowledge you need about building a Library system. 
 
-The most impressive section is I can clearly know how to connect front-end and back-end.
+The most impressive section is I clearly know how to connect front-end and back-end.
 
 ## About Library system
 
-It has the basic functions likes **CRUD**, user can insert/delete/upload/search the books. Also this system provides the **lending record** on all the books. User can easily know who had borrowed this book before. The last one is the **book detail**. In detail user can quickly get the information about this book. All functions have basic **validations**. For example: wrong content, wrong date format, etc.
+It has basic functions like **CRUD**, the user can insert/delete/upload/search the books. Also, this system provides the **lending record** on all the books. Users can easily know who had borrowed this book before. The last one is the **book detail**. In detail, users can quickly get the information about this book. All functions have basic **validations**. For example: wrong content, wrong date format, etc.
 
 ## Lecture 2 SQL
 
@@ -28,8 +28,8 @@ This is my note about SQL on hackMD: https://hackmd.io/buCn9cEMQO2F0KWqWM5V2A?vi
 #### What I learned
 
 1. Learning using **[Kendo UI](https://docs.telerik.com/kendo-ui/api/javascript/kendo)** to beauty the front-end 
-2. Figure out what is **[LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)** and using it to store data
-3. Learning some basic **javascript** and **jQuery** to create functions and events
+2. Figure out what is **[LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)** and use it to store data
+3. Learning basic **javascript** and **jQuery** to create functions and events
 
 This is my note about Front End Basic on hackMD:https://hackmd.io/nzPJVhgiShWj-vnBQts8aw
 
@@ -51,7 +51,7 @@ This is my note about MVC on hackMD:https://hackmd.io/8W9usrdGQlKmE3YziTDihw
 #### What I learned
 
 1. Replace ViewBag with **AJax**
-   - Realize the real way to connect font-end and back-end
+   - Learning a software struture: front-end and back-end separation
    - Difference between POST and GET
 
 2. Using what I learned at lecture 3  **[Kendo UI](https://docs.telerik.com/kendo-ui/api/javascript/kendo)** to beauty the front-end 
@@ -62,6 +62,9 @@ This is my note about Front End Advance on hackMD:https://hackmd.io/gqlliruQQrae
 
 #### What I learned
 
+1. Seperating MVC project into 3-Layer Architecture
+2. UnitTest
+3. Using Jenkins + Sonarqube to check the code quality
 
 
 ------
